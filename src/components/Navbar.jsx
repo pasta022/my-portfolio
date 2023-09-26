@@ -84,13 +84,18 @@ const Navbar = () => {
     <Container>
       <Nav>
         <IconContainer>
-          <Icon>
-            {isChange ? (
-              <Code sx={{ fontSize: "32px" }} />
-            ) : (
-              <CodeOff sx={{ fontSize: "32px" }} />
-            )}
-          </Icon>
+          <Link
+            to="/contact"
+            style={{ textDecoration: "none", color: "#10f0fc" }}
+          >
+            <Icon>
+              {isChange ? (
+                <Code sx={{ fontSize: "32px" }} />
+              ) : (
+                <CodeOff sx={{ fontSize: "32px" }} />
+              )}
+            </Icon>
+          </Link>
         </IconContainer>
         <Links>
           <LinkContainer>
