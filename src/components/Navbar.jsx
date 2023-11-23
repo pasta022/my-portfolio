@@ -50,8 +50,8 @@ const Links = styled.div`
     width: "100%",
     gap: "1.5rem",
     backgroundColor: "#1c2025",
-    transition: "1s",
-    transform: "translateY(-120vh)",
+    // transition: "1s",
+    // transform: "translateY(-120vh)",
     // zIndex: "99",
     flexDirection: "column",
   })}
@@ -108,17 +108,34 @@ const Button2 = styled.button`
 
 const Navbar = () => {
   const [isChange, setIsChange] = useState(false);
+  const [isToggle, setIsToggle] = useState(false);
   const navRef = useRef();
 
   const showNavBar = () => {
-    navRef.current.classList.toggle("responsive-nav");
+    setIsToggle((prevState) => !prevState);
   };
+
+  const clickLink = () => {
+    navRef.current.classList.add("hide-nav");
+    navRef.current.classList.remove("show-nav");
+  };
+
+  useEffect(() => {
+    if (isToggle) {
+      navRef.current.classList.add("show-nav");
+      navRef.current.classList.remove("hide-nav");
+    } else {
+      navRef.current.classList.add("hide-nav");
+      navRef.current.classList.remove("show-nav");
+    }
+  }, [isToggle]);
 
   useEffect(() => {
     setTimeout(() => {
       setIsChange(!isChange);
     }, 5000);
   }, [isChange]);
+
   return (
     <Container>
       <Nav>
@@ -134,16 +151,12 @@ const Navbar = () => {
           </Link>
         </IconContainer>
         <Links ref={navRef}>
-          <LinkContainer
-            onClick={() => navRef.current.classList.remove("responsive-nav")}
-          >
+          <LinkContainer onClick={clickLink}>
             <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
               Home
             </Link>
           </LinkContainer>
-          <LinkContainer
-            onClick={() => navRef.current.classList.remove("responsive-nav")}
-          >
+          <LinkContainer onClick={clickLink}>
             <Link
               to="/Contact"
               style={{ textDecoration: "none", color: "#fff" }}

@@ -1,3 +1,9 @@
-.responsive-nav{
+.show-nav{
+    transition: 1s;
     transform: none;
+}
+
+.hide-nav{
+    transition: 1s;
+    transform: translateY(-120vh);
 }
