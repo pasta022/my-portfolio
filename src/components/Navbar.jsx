@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import styled from "styled-components";
-import { Code, CodeOff } from "@mui/icons-material";
+import styled, { css } from "styled-components";
+import { Close, Code, CodeOff, Menu } from "@mui/icons-material";
 import { mobile } from "../responsive";
+import "./styles/navbar.css";
 
 const Container = styled.div`
   width: 100%;
@@ -41,8 +42,18 @@ const Links = styled.div`
   font-size: 18px;
 
   ${mobile({
-    width: "60%",
     fontSize: "14px",
+    position: "fixed",
+    top: "0",
+    left: "0",
+    height: "100%",
+    width: "100%",
+    gap: "1.5rem",
+    backgroundColor: "#1c2025",
+    transition: "1s",
+    transform: "translateY(-120vh)",
+    // zIndex: "99",
+    flexDirection: "column",
   })}
 `;
 
@@ -72,8 +83,36 @@ const Button = styled.button`
   }
 `;
 
+const Button2 = styled.button`
+  padding: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  display: none;
+  font-size: 1.8rem;
+  color: #10f0fc;
+
+  ${(props) =>
+    props.$btnClose &&
+    css`
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    `}
+
+  ${mobile({
+    display: "block",
+  })}
+`;
+
 const Navbar = () => {
   const [isChange, setIsChange] = useState(false);
+  const navRef = useRef();
+
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive-nav");
+  };
 
   useEffect(() => {
     setTimeout(() => {
@@ -84,10 +123,7 @@ const Navbar = () => {
     <Container>
       <Nav>
         <IconContainer>
-          <Link
-            to="/contact"
-            style={{ textDecoration: "none", color: "#10f0fc" }}
-          >
+          <Link to="/" style={{ textDecoration: "none", color: "#10f0fc" }}>
             <Icon>
               {isChange ? (
                 <Code sx={{ fontSize: "32px" }} />
@@ -97,23 +133,31 @@ const Navbar = () => {
             </Icon>
           </Link>
         </IconContainer>
-        <Links>
-          <LinkContainer>
+        <Links ref={navRef}>
+          <LinkContainer
+            onClick={() => navRef.current.classList.remove("responsive-nav")}
+          >
             <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
               Home
             </Link>
           </LinkContainer>
-          <LinkContainer>
-            <Button>
-              <Link
-                to="/Contact"
-                style={{ textDecoration: "none", color: "#fff" }}
-              >
-                Hire Me
-              </Link>
-            </Button>
+          <LinkContainer
+            onClick={() => navRef.current.classList.remove("responsive-nav")}
+          >
+            <Link
+              to="/Contact"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              Hire Me
+            </Link>
           </LinkContainer>
+          <Button2 onClick={showNavBar} $btnClose>
+            <Close />
+          </Button2>
         </Links>
+        <Button2 onClick={showNavBar}>
+          <Menu />
+        </Button2>
       </Nav>
     </Container>
   );
