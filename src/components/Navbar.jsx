@@ -36,13 +36,13 @@ const Links = styled.div`
   width: 40%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   margin-right: 10px;
   color: white;
   font-size: 18px;
 
   ${mobile({
-    fontSize: "14px",
+    fontSize: "18px",
     position: "fixed",
     top: "0",
     left: "0",
@@ -90,7 +90,6 @@ const Button2 = styled.button`
   border: none;
   outline: none;
   display: none;
-  font-size: 1.8rem;
   color: #10f0fc;
 
   ${(props) =>
@@ -101,8 +100,21 @@ const Button2 = styled.button`
       right: 2rem;
     `}
 
+  ${(props) =>
+    props.$menu &&
+    css`
+      width: 50px;
+      height: 50px;
+      margin: 20px;
+      padding: 20px;
+      color: #10f0fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    `}
+
   ${mobile({
-    display: "block",
+    display: "flex",
   })}
 `;
 
@@ -151,7 +163,7 @@ const Navbar = () => {
           </Link>
         </IconContainer>
         <Links ref={navRef}>
-          <LinkContainer onClick={clickLink}>
+          <LinkContainer onClick={clickLink} style={{ marginTop: "6em" }}>
             <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
               Home
             </Link>
@@ -168,8 +180,8 @@ const Navbar = () => {
             <Close />
           </Button2>
         </Links>
-        <Button2 onClick={showNavBar}>
-          <Menu />
+        <Button2 onClick={showNavBar} $menu>
+          <Menu sx={{ fontSize: "32px" }} />
         </Button2>
       </Nav>
     </Container>

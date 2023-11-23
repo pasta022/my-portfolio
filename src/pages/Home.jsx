@@ -163,7 +163,6 @@ const Span = styled.span`
 `;
 
 const Footer = styled.div`
-  width: 100vw;
   height: 30px;
   display: flex;
   align-items: center;
