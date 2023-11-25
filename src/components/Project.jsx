@@ -11,7 +11,7 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #27282f;
-  height: 300px;
+  height: ${(props) => !props.project && "300px"};
   border-radius: 10px;
 `;
 
@@ -57,10 +57,10 @@ const Button = styled.button`
   }
 `;
 
-const Project = ({ p }) => {
+const Project = ({ p, project }) => {
   return (
     <Container>
-      <ProjectContainer>
+      <ProjectContainer project={project}>
         <Image src={p.img} />
         <Details>
           <Date>{p.date}</Date>
