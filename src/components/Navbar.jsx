@@ -68,6 +68,14 @@ const LinkContainer = styled.div`
   &:hover {
     color: #10f0fc;
   }
+
+  ${(props) =>
+    props.$top &&
+    css`
+      ${mobile({
+        marginTop: "6em",
+      })}
+    `}
 `;
 
 const Button = styled.button`
@@ -108,7 +116,6 @@ const Button2 = styled.button`
       margin: 20px;
       padding: 20px;
       color: #10f0fc;
-      display: flex;
       align-items: center;
       justify-content: center;
     `}
@@ -163,7 +170,7 @@ const Navbar = () => {
           </Link>
         </IconContainer>
         <Links ref={navRef}>
-          <LinkContainer onClick={clickLink} style={{ marginTop: "6em" }}>
+          <LinkContainer onClick={clickLink} $top>
             <Link to="/" style={{ textDecoration: "none", color: "#fff" }}>
               Home
             </Link>

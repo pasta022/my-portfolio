@@ -42,8 +42,8 @@ const Info = styled.div`
 
 const InfoLeft = styled.div`
   flex: 1;
-  min-width: 200px;
-  min-height: 200px;
+  width: 250px;
+  height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
