@@ -1,23 +1,42 @@
 export const projects = [
-    {
-        id: 1,
-        img: "/media/moviebox.png",
-        date: "17 Sep 2023",
-        title: "Movie Box",
-        link: "https://hng-task2-movie-box.vercel.app"
-    },
-    {
-        id: 2,
-        img: "/media/image-gallery.png",
-        date: "21 Sep 2023",
-        title: "Image Gallery",
-        link: "https://image-gallery-lac-rho.vercel.app/"
-    },
-    {
-        id: 3,
-        img: "/media/shop-ui.png",
-        date: "21 July 2023",
-        title: "Shop UI",
-        link: "https://e-commerce-ui-nu.vercel.app"
-    },
-]
+  {
+    id: 1,
+    img: "/media/moviebox.png",
+    date: "17 Sep 2023",
+    title: "Movie Box",
+    link: "https://hng-task2-movie-box.vercel.app",
+    github: "",
+  },
+  {
+    id: 2,
+    img: "/media/image-gallery.png",
+    date: "21 Sep 2023",
+    title: "Image Gallery",
+    link: "https://image-gallery-lac-rho.vercel.app/",
+    github: "",
+  },
+  {
+    id: 3,
+    img: "/media/shop-ui.png",
+    date: "21 July 2023",
+    title: "Shop UI",
+    link: "https://e-commerce-ui-nu.vercel.app",
+    github: "",
+  },
+  {
+    id: 4,
+    img: "/media/wordle.png",
+    date: "17 June 2022",
+    title: "Wordle Clone",
+    link: "https://wordle-clone2-sigma.vercel.app/",
+    github: "",
+  },
+  {
+    id: 5,
+    img: "/media/tic-tac-toe.png",
+    date: "29 April 2022",
+    title: "Tic Tac Toe",
+    link: "https://tic-tac-toe-coral-one.vercel.app/",
+    github: "",
+  },
+];

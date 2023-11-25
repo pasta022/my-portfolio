@@ -172,6 +172,7 @@ const Footer = styled.div`
 const FooterText = styled.p``;
 
 const Home = () => {
+  const homeProjects = projects.filter((p) => p.id <= 3);
   return (
     <Container>
       <Info>
@@ -220,7 +221,7 @@ const Home = () => {
       <Projects>
         <Title>Projects</Title>
         <ProjectsContainer>
-          {projects.map((project) => {
+          {homeProjects.map((project) => {
             return <Project p={project} key={project.id} />;
           })}
         </ProjectsContainer>

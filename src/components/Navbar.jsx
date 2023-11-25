@@ -177,6 +177,14 @@ const Navbar = () => {
           </LinkContainer>
           <LinkContainer onClick={clickLink}>
             <Link
+              to="/projects"
+              style={{ textDecoration: "none", color: "#fff" }}
+            >
+              Projects
+            </Link>
+          </LinkContainer>
+          <LinkContainer onClick={clickLink}>
+            <Link
               to="/Contact"
               style={{ textDecoration: "none", color: "#fff" }}
             >
