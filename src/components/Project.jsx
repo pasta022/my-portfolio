@@ -11,7 +11,7 @@ const ProjectContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: #27282f;
-  height: ${(props) => !props.project && "300px"};
+  /* height: ${(props) => !props.project && "300px"}; */
   border-radius: 10px;
 `;
 
@@ -36,8 +36,12 @@ const Title = styled.h4`
 `;
 
 const Link = styled.a`
-  text-decoration: none;
-  margin: 20px 0;
+  text-decoration: ${(props) => !props.$github && "none"};
+  margin: 20px 0 0 0;
+  text-decoration-color: #10f0fc;
+  color: #10f0fc;
+  margin-bottom: ${(props) => props.$github && "20px"};
+  font-size: ${(props) => props.$github && "15px"};
 
   &:hover {
     cursor: pointer;
@@ -60,13 +64,16 @@ const Button = styled.button`
 const Project = ({ p, project }) => {
   return (
     <Container>
-      <ProjectContainer project={project}>
+      <ProjectContainer $project={project}>
         <Image src={p.img} />
         <Details>
           <Date>{p.date}</Date>
           <Title>{p.title}</Title>
-          <Link href={p.link}>
+          <Link href={p.link} target="_blank">
             <Button>View Project</Button>
+          </Link>
+          <Link href={p.github} target="_blank" $github>
+            View github repo
           </Link>
         </Details>
       </ProjectContainer>

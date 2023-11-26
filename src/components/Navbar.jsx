@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { Close, Code, CodeOff, Menu } from "@mui/icons-material";
 import { mobile } from "../responsive";
@@ -33,7 +33,7 @@ const IconContainer = styled.div`
 const Icon = styled.div``;
 
 const Links = styled.div`
-  width: 40%;
+  width: 60%;
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -78,17 +78,9 @@ const LinkContainer = styled.div`
     `}
 `;
 
-const Button = styled.button`
-  border: 1px solid #10f0fc;
-  padding: 10px;
-  background-color: #1c2025;
-  color: #10f0fc;
-  font-weight: 600;
-
-  &:hover {
-    color: #1c2025;
-    background-color: #10f0fc;
-  }
+const CVLink = styled.a`
+  text-decoration: none;
+  color: white;
 `;
 
 const Button2 = styled.button`
@@ -135,8 +127,12 @@ const Navbar = () => {
   };
 
   const clickLink = () => {
-    navRef.current.classList.add("hide-nav");
-    navRef.current.classList.remove("show-nav");
+    // navRef.current.classList.add("hide-nav");
+    // setTimeout(() => {
+    //   navRef.current.classList.remove("hide-nav");
+    // }, 1000);
+    // navRef.current.classList.remove("show-nav");
+    setIsToggle(false);
   };
 
   useEffect(() => {
@@ -182,6 +178,14 @@ const Navbar = () => {
             >
               Projects
             </Link>
+          </LinkContainer>
+          <LinkContainer onClick={clickLink}>
+            <CVLink
+              href={`${process.env.PUBLIC_URL}/media/Resume.pdf`}
+              download="my resume"
+            >
+              Download Resumé
+            </CVLink>
           </LinkContainer>
           <LinkContainer onClick={clickLink}>
             <Link

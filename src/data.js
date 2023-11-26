@@ -5,7 +5,7 @@ export const projects = [
     date: "17 Sep 2023",
     title: "Movie Box",
     link: "https://hng-task2-movie-box.vercel.app",
-    github: "",
+    github: "https://github.com/pasta022/hng-task2-movieBox",
   },
   {
     id: 2,
@@ -13,7 +13,7 @@ export const projects = [
     date: "21 Sep 2023",
     title: "Image Gallery",
     link: "https://image-gallery-lac-rho.vercel.app/",
-    github: "",
+    github: "https://github.com/pasta022/hng-task3-ImageGallery",
   },
   {
     id: 3,
@@ -21,7 +21,7 @@ export const projects = [
     date: "21 July 2023",
     title: "Shop UI",
     link: "https://e-commerce-ui-nu.vercel.app",
-    github: "",
+    github: "https://github.com/pasta022/shop-e-commerce-",
   },
   {
     id: 4,
@@ -29,7 +29,7 @@ export const projects = [
     date: "17 June 2022",
     title: "Wordle Clone",
     link: "https://wordle-clone2-sigma.vercel.app/",
-    github: "",
+    github: "https://github.com/pasta022/Wordle-Clone2",
   },
   {
     id: 5,
@@ -37,6 +37,6 @@ export const projects = [
     date: "29 April 2022",
     title: "Tic Tac Toe",
     link: "https://tic-tac-toe-coral-one.vercel.app/",
-    github: "",
+    github: "https://github.com/pasta022/Tic-Tac-Toe",
   },
 ];

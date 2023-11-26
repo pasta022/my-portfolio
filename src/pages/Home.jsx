@@ -15,10 +15,10 @@ import wpLogo from "../image/wp-logo2.png";
 import { projects } from "../data";
 import Project from "../components/Project";
 import { mobile } from "../responsive";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Container = styled.div`
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: #1c2025;
   padding: 0 100px;
@@ -144,18 +144,23 @@ const ProjectsContainer = styled.div`
   })}
 `;
 
-const More = styled.a`
+const More = styled.div`
   text-align: right;
   text-decoration: none;
-  color: white;
+  margin-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  margin-bottom: 20px;
 
   &:hover {
     color: #10f0fc;
   }
+`;
+
+const ArrowDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const Span = styled.span`
@@ -173,6 +178,8 @@ const FooterText = styled.p``;
 
 const Home = () => {
   const homeProjects = projects.filter((p) => p.id <= 3);
+  const navigate = useNavigate();
+
   return (
     <Container>
       <Info>
@@ -225,9 +232,22 @@ const Home = () => {
             return <Project p={project} key={project.id} />;
           })}
         </ProjectsContainer>
-        <More href="https://github.com/pasta022?tab=repositories">
-          <Span>See more projects</Span>
-          <KeyboardDoubleArrowRight />
+        <More onClick={() => navigate("/projects")}>
+          <Link
+            to="/projects"
+            style={{
+              textDecoration: "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "flex-end",
+              color: "white",
+            }}
+          >
+            <Span>See all projects</Span>
+            <ArrowDiv>
+              <KeyboardDoubleArrowRight />
+            </ArrowDiv>
+          </Link>
         </More>
       </Projects>
       <Footer>
