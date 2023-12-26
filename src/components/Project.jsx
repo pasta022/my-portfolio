@@ -15,8 +15,13 @@ const ProjectContainer = styled.div`
   border-radius: 10px;
 `;
 
-const Image = styled.img`
+const ImageContainer = styled.div`
   height: 40%;
+  width: 100%;
+`
+
+const Image = styled.img`
+  height: 100%;
   width: 100%;
   object-fit: cover;
 `;
@@ -65,7 +70,9 @@ const Project = ({ p, project }) => {
   return (
     <Container>
       <ProjectContainer $project={project}>
-        <Image src={p.img} />
+        <ImageContainer>
+          <Image src={p.img} />
+        </ImageContainer>
         <Details>
           <Date>{p.date}</Date>
           <Title>{p.title}</Title>

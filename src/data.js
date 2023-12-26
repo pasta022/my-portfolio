@@ -1,6 +1,14 @@
 export const projects = [
   {
     id: 1,
+    img: "/media/social-media.png",
+    date: "25 Dec 2023",
+    title: "Social Media",
+    link: "https://antisocial-ten.vercel.app/",
+    github: "https://github.com/pasta022/AntiSociaL",
+  },
+  {
+    id: 2,
     img: "/media/moviebox.png",
     date: "17 Sep 2023",
     title: "Movie Box",
@@ -8,7 +16,7 @@ export const projects = [
     github: "https://github.com/pasta022/hng-task2-movieBox",
   },
   {
-    id: 2,
+    id: 3,
     img: "/media/image-gallery.png",
     date: "21 Sep 2023",
     title: "Image Gallery",
@@ -16,7 +24,7 @@ export const projects = [
     github: "https://github.com/pasta022/hng-task3-ImageGallery",
   },
   {
-    id: 3,
+    id: 4,
     img: "/media/shop-ui.png",
     date: "21 July 2023",
     title: "Shop UI",
@@ -24,7 +32,7 @@ export const projects = [
     github: "https://github.com/pasta022/shop-e-commerce-",
   },
   {
-    id: 4,
+    id: 5,
     img: "/media/wordle.png",
     date: "17 June 2022",
     title: "Wordle Clone",
@@ -32,7 +40,7 @@ export const projects = [
     github: "https://github.com/pasta022/Wordle-Clone2",
   },
   {
-    id: 5,
+    id: 6,
     img: "/media/tic-tac-toe.png",
     date: "29 April 2022",
     title: "Tic Tac Toe",
